@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "GurjasButtarLab9"
-include ':app'
+include ':GurjasModule9'
