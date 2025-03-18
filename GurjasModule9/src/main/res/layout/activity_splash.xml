@@ -13,37 +13,36 @@
         android:id="@+id/gurapp_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="100dp"
         android:src="@drawable/rain_foreground"
-        app:layout_constraintBottom_toTopOf="@+id/gurapp_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"/>
 
     <TextView
         android:id="@+id/gurapp_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Design Navigation Drawer app"
-        android:textColor="@color/black"
+        android:text="@string/design_navigation_drawer_app"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gurapp_image" />
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"/>
 
     <TextView
      android:id="@+id/gurdesigner_info"
         android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-        android:text="by Gurjas Buttar N01562033 ©"
-    android:textSize="14sp"
-    android:textColor="@color/magenta"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:layout_marginBottom="50dp"/>
+        android:text="@string/by_gurjas_buttar_n01562033"
+        android:textSize="14sp"
+        android:textColor="@color/magenta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="20dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

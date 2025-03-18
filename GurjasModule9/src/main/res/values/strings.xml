@@ -4,4 +4,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_to_gurjas1fragment">Welcome to Gurjas1Fragment</string>
+    <string name="by_gurjas_buttar_n01562033">by Gurjas Buttar N01562033 ©</string>
+    <string name="design_navigation_drawer_app">Design Navigation Drawer app</string>
+    <string name="gurjas_buttar">Gurjas Buttar</string>
+    <string name="n01562033_humber_ca">n01562033@humber.ca</string>
+    <string name="menu_item_2">Menu Item 2</string>
+    <string name="menu_item_1">Menu Item 1</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="fragment_2">Fragment 2</string>
 </resources>
