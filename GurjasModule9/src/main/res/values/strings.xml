@@ -12,4 +12,10 @@
     <string name="menu_item_1">Menu Item 1</string>
     <string name="fragment_1">Fragment 1</string>
     <string name="fragment_2">Fragment 2</string>
+    <string name="options">Options</string>
+    <string name="optionss">Options</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="app_name">Navigation Drawer</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
 </resources>

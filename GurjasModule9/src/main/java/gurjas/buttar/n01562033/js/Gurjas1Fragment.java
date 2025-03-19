@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 public class Gurjas1Fragment extends Fragment {
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
