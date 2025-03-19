@@ -2,4 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item
+        android:id="@+id/gur_options"
+        android:title="@string/options"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/gur_toggle"
+                android:title="Gur"
+                android:icon="@drawable/baseline_legend_toggle_24"
+                app:showAsAction="always"/>
+            <item
+                android:id="@+id/gur_search"
+                android:title="But"
+                android:icon="@drawable/baseline_manage_search_24"
+                app:showAsAction="always"/>
+        </menu>
+    </item>
 </menu>

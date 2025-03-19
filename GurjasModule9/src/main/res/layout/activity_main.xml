@@ -24,14 +24,6 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/options"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:layout_gravity="end"
-                android:paddingEnd="16dp" />
         </androidx.appcompat.widget.Toolbar>
 
         <FrameLayout
