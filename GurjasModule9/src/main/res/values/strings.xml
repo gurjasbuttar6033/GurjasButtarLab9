@@ -17,4 +17,9 @@
     <string name="app_name">Navigation Drawer</string>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
+    <string name="dark_mode">dark_mode</string>
+    <string name="settings">settings</string>
+    <string name="but_clicked">But clicked</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
 </resources>
