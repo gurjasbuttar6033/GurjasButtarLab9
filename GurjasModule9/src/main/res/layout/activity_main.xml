@@ -5,6 +5,8 @@
     android:id="@+id/gurmain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     tools:context=".ButtarActivity9">
 
     <LinearLayout
@@ -39,11 +41,13 @@
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/gurnav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:id="@+id/gurnav_view"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu" />
+        app:headerLayout="@layout/navdrawerheader"
+        app:menu="@menu/navdrawermenu"
+        app:itemIconTint="@color/lavender"
+        app:itemTextColor="@color/lavender"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

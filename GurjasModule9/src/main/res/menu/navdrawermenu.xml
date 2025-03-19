@@ -11,6 +11,8 @@
             android:title="Gurjas1Fragment"/>
 
         <item
-            android:id="@+"
+            android:id="@+id/but_nav_fragtwo"
+            android:title="Buttar2Fragment"/>
+    </group>
 
 </menu>
