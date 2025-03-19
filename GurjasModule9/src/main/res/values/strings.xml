@@ -22,4 +22,6 @@
     <string name="but_clicked">But clicked</string>
     <string name="search">Search</string>
     <string name="cancel">Cancel</string>
+    <string name="add_item">Add Item</string>
+    <string name="delete_all">Delete All</string>
 </resources>

@@ -41,5 +41,9 @@
         app:menu="@menu/navdrawermenu"
         app:itemIconTint="@color/lavender"
         app:itemTextColor="@color/lavender"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gurrecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

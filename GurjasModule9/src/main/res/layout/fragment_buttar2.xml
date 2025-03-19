@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Buttar2Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/gurfileNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="File Name" />
+
+    <EditText
+        android:id="@+id/gurfileContentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="File Content" />
+
+    <Button
+        android:id="@+id/createFileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create File" />
+
+    <Button
+        android:id="@+id/writeFileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Write File" />
+
+    <Button
+        android:id="@+id/readFileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Read File" />
+
+    <Button
+        android:id="@+id/deleteFileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete File" />
+
+    <TextView
+        android:id="@+id/fileNamesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:paddingTop="16dp" />
+</LinearLayout>

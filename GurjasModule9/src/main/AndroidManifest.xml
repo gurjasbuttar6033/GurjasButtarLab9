@@ -13,15 +13,17 @@
         android:theme="@style/Theme.GurjasButtarLab9"
         tools:targetApi="31">
         <activity
+            android:name=".ItemAdapter"
+            android:exported="false" />
+        <activity
             android:name=".GurjasButSplash"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
         <activity
             android:name=".ButtarActivity9"
             android:exported="true"

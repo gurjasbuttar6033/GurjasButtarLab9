@@ -5,12 +5,23 @@
     android:layout_height="match_parent"
     tools:context=".Gurjas1Fragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gurrecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/welcome_to_gurjas1fragment"
-        android:textSize="24sp"
-        android:gravity="center"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
 
+    <Button
+        android:id="@+id/guraddButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_item" />
+
+    <Button
+        android:id="@+id/gurdeleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_all" />
 
 </FrameLayout>
