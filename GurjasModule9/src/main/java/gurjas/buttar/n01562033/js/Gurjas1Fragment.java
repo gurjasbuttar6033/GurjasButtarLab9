@@ -1,13 +1,18 @@
+//Gurjas Buttar N01562033
 package gurjas.buttar.n01562033.js;
 
+
+import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,13 +30,14 @@ import java.util.List;
 
 public class Gurjas1Fragment extends Fragment {
 
+    // creating variables for our ui components.
+    private EditText courseNameEdt, courseDescEdt;
+    private Button addBtn, saveBtn;
+    private RecyclerView courseRV;
 
-    private RecyclerView recyclerView;
-    private ItemAdapter adapter;
-    private List<String> itemList;
-    private SharedPreferences sharedPreferences;
-    private static final String PREFS_NAME = "MyPrefs";
-    private static final String KEY_LIST = "MyList";
+    // variable for our adapter class and array list
+    private CourseAdapter adapter;
+    private ArrayList<CourseModal> courseModalArrayList;
 
     public Gurjas1Fragment() {
 
@@ -40,54 +46,111 @@ public class Gurjas1Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //On creation of this view, implementing all of this
+
+        //inflates xml file into the app
         View view = inflater.inflate(R.layout.fragment_gurjas1, container, false);
 
-        recyclerView = view.findViewById(R.id.gurrecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        // initializing our variables.
+        courseNameEdt = view.findViewById(R.id.idEdtCourseName);
+        courseDescEdt = view.findViewById(R.id.idEdtCourseDescription);
+        addBtn = view.findViewById(R.id.idBtnAdd);
+        saveBtn = view.findViewById(R.id.idBtnSave);
+        courseRV = view.findViewById(R.id.idRVCourses);
 
-        Button addButton = view.findViewById(R.id.guraddButton);
-        Button deleteButton = view.findViewById(R.id.gurdeleteButton);
+        //logic
+        loadData();
+        buildRecyclerView();
 
-        sharedPreferences = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        itemList = loadData();
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveData();
+            }
+        });
 
-        adapter = new ItemAdapter(itemList);
-        recyclerView.setAdapter(adapter);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // below line is use to add data to array list.
+                courseModalArrayList.add(new CourseModal(courseNameEdt.getText().toString(), courseDescEdt.getText().toString()));
+                // notifying adapter when new data added.
+                adapter.notifyItemInserted(courseModalArrayList.size());
+            }
+        });
 
-        addButton.setOnClickListener(v -> addItem());
-        deleteButton.setOnClickListener(v -> deleteAllItems());
 
         return view;
     }
 
-    private void addItem() {
-        itemList.add("Item " + (itemList.size() + 1));
-        saveData();
-        adapter.notifyDataSetChanged();
-    }
+    private void loadData() {
+        // method to load arraylist from shared prefs
+        // initializing our shared prefs with name as
+        // shared preferences.
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shared preferences", MODE_PRIVATE);
 
-    private void deleteAllItems() {
-        if (itemList.isEmpty()) {
-            Toast.makeText(getContext(), "No data to delete", Toast.LENGTH_SHORT).show();
-        } else {
-            itemList.clear();
-            saveData();
-            adapter.notifyDataSetChanged();
+        // creating a variable for gson.
+        Gson gson = new Gson();
+
+        // below line is to get to string present from our
+        // shared prefs if not present setting it as null.
+        String json = sharedPreferences.getString("courses", null);
+
+        // below line is to get the type of our array list.
+        Type type = new TypeToken<ArrayList<CourseModal>>() {}.getType();
+
+        // in below line we are getting data from gson
+        // and saving it to our array list
+        courseModalArrayList = gson.fromJson(json, type);
+
+        // checking below if the array list is empty or not
+        if (courseModalArrayList == null) {
+            // if the array list is empty
+            // creating a new array list.
+            courseModalArrayList = new ArrayList<>();
         }
     }
 
     private void saveData() {
+        // method for saving the data in array list.
+        // creating a variable for storing data in
+        // shared preferences.
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shared preferences", MODE_PRIVATE);
+
+        // creating a variable for editor to
+        // store data in shared preferences.
         SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // creating a new variable for gson.
         Gson gson = new Gson();
-        String json = gson.toJson(itemList);
-        editor.putString(KEY_LIST, json);
+
+        // getting data from gson and storing it in a string.
+        String json = gson.toJson(courseModalArrayList);
+
+        // below line is to save data in shared
+        // prefs in the form of string.
+        editor.putString("courses", json);
+
+        // below line is to apply changes
+        // and save data in shared prefs.
         editor.apply();
+
+        // after saving data we are displaying a toast message.
+        Toast.makeText(getContext(), "Saved Array List to Shared preferences. ", Toast.LENGTH_SHORT).show();
     }
 
-    private List<String> loadData() {
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString(KEY_LIST, null);
-        Type type = new TypeToken<ArrayList<String>>() {}.getType();
-        return json == null ? new ArrayList<>() : gson.fromJson(json, type);
+    private void buildRecyclerView() {
+        // initializing our adapter class.
+        adapter = new CourseAdapter(courseModalArrayList, getContext());
+
+        // adding layout manager to our recycler view.
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        courseRV.setHasFixedSize(true);
+
+        // setting layout manager to our recycler view.
+        courseRV.setLayoutManager(manager);
+
+        // setting adapter to our recycler view.
+        courseRV.setAdapter(adapter);
     }
 }
