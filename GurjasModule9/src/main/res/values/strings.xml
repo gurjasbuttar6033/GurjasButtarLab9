@@ -30,4 +30,16 @@
     <string name="write_file">Write File</string>
     <string name="read_file">Read File</string>
     <string name="delete_file">Delete File</string>
+    <string name="file">"File "</string>
+    <string name="file_creation_failed">File creation failed</string>
+    <string name="has_been_created">" has been created"</string>
+    <string name="file_already_exists">File already exists</string>
+    <string name="write_successful">Write successful</string>
+    <string name="write_failed">Write failed</string>
+    <string name="utf_8">UTF-8</string>
+    <string name="read_successful">Read successful</string>
+    <string name="read_failed">Read failed</string>
+    <string name="comma" />
+    <string name="file_deleted">File deleted</string>
+    <string name="file_doesn_t_exist">File doesn\'t exist</string>
 </resources>

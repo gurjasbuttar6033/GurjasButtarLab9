@@ -8,13 +8,10 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/rain_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/rain_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GurjasButtarLab9"
         tools:targetApi="31">
-        <activity
-            android:name=".ItemAdapter"
-            android:exported="false" />
         <activity
             android:name=".GurjasButSplash"
             android:exported="true">
